@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anuj | Full Stack Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Syne (display) + Outfit (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Devicons for skill icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+  <!-- Font Awesome 6 (free) for LeetCode, HackerRank, etc. -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <!-- ========== LOADING SCREEN ========== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">A</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <p class="loader-text">Initializing Experience...</p>
+    </div>
+  </div>
+
+  <!-- ========== CURSOR GLOW ========== -->
+  <div id="cursor-glow"></div>
+  <div id="cursor-dot"></div>
+
+  <!-- ========== SCROLL PROGRESS BAR ========== -->
+  <div id="scroll-progress"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">Anuj<span class="accent">.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Certs</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="home" class="hero">
+    <canvas id="particleCanvas"></canvas>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="hero-content">
+      <p class="hero-greeting reveal-up">Hello, World 👋</p>
+      <h1 class="hero-title reveal-up">Hi, I'm <span class="name-glow">Anuj</span></h1>
+      <div class="hero-roles reveal-up">
+        <span class="role-prefix">I'm a </span>
+        <span id="typed-text" class="typed"></span><span class="cursor-blink">|</span>
+      </div>
+      <p class="hero-sub reveal-up">
+        Crafting digital experiences that live at the intersection of elegant code and bold design.
+        I build full-stack web applications that are fast, accessible, and visually stunning.
+      </p>
+      <div class="hero-cta reveal-up">
+        <a href="#projects" class="btn btn-primary">
+          <span>View Projects</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about" class="about section">
+    <div class="section-header reveal-up">
+      <p class="section-tag">Get to know me</p>
+      <h2 class="section-title">About <span class="accent">Me</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-image-wrap reveal-left">
+        <div class="about-img-frame">
+          <img src="anuj_5.jpeg" alt="Anuj – Full Stack Developer" class="about-img" />
+          <div class="img-ring img-ring-1"></div>
+          <div class="img-ring img-ring-2"></div>
+          <div class="img-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Available for hire
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal-right">
+        <h3 class="about-headline">Full Stack Developer &amp; Creative Problem Solver</h3>
+        <p>
+          I'm Anuj, a passionate Full Stack Developer with a love for building products
+          that make people's lives easier. I specialize in the JavaScript ecosystem —
+          from pixel-perfect React UIs to robust Node.js backends and cloud-native architectures.
+        </p>
+        <p>
+          My journey started with a single "Hello World" and has evolved into crafting
+          complex, scalable applications. I'm deeply interested in AI integration,
+          performance optimization, and the art of clean, maintainable code.
+        </p>
+        <p>
+          When I'm not coding, you'll find me exploring new tech, contributing to open source,
+          or experimenting with generative art and creative coding.
+        </p>
+
+        <ul class="about-facts">
+          <li><span class="fact-icon">📍</span> Based in India</li>
+          <li><span class="fact-icon">🎓</span> Computer Science Graduate</li>
+          <li><span class="fact-icon">💡</span> AI &amp; Web3 Enthusiast</li>
+          <li><span class="fact-icon">🚀</span> Open Source Contributor</li>
+        </ul>
+
+        <div class="about-doc-btns">
+          <button class="btn btn-primary" onclick="openDocModal('resume')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Resume
+          </button>
+          <button class="btn btn-ghost" onclick="openDocModal('cv')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Curriculum Vitae
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section id="skills" class="skills section">
+    <div class="section-header reveal-up">
+      <p class="section-tag">What I work with</p>
+      <h2 class="section-title">My <span class="accent">Skills</span></h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal-up" style="--delay:0s">
+        <div class="skill-icon"><i class="devicon-html5-plain colored"></i></div>
+        <h4>HTML5</h4>
+        <div class="skill-bar"><div class="skill-fill" data-w="95"></div></div>
+        <span class="skill-pct">95%</span>
+      </div>
+      <div class="skill-card reveal-up" style="--delay:.05s">
+        <div class="skill-icon"><i class="devicon-css3-plain colored"></i></div>
+        <h4>CSS3</h4>
+        <div class="skill-bar"><div class="skill-fill" data-w="90"></div></div>
+        <span class="skill-pct">90%</span>
+      </div>
+      <div class="skill-card reveal-up" style="--delay:.1s">
+        <div class="skill-icon"><i class="devicon-javascript-plain colored"></i></div>
+        <h4>JavaScript</h4>
+        <div class="skill-bar"><div class="skill-fill" data-w="88"></div></div>
+        <span class="skill-pct">88%</span>
+      </div>
+      <div class="skill-card reveal-up" style="--delay:.15s">
+        <div class="skill-icon"><i class="devicon-react-original colored"></i></div>
+        <h4>React</h4>
+        <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
+        <span class="skill-pct">85%</span>
+      </div>
+      <div class="skill-card reveal-up" style="--delay:.2s">
+        <div class="skill-icon"><i class="devicon-nodejs-plain colored"></i></div>
+        <h4>Node.js</h4>
+        <div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
+        <span class="skill-pct">80%</span>
+      </div>
+      <div class="skill-card reveal-up" style="--delay:.25s">
+        <div class="skill-icon"><i class="devicon-mongodb-plain colored"></i></div>
+        <h4>MongoDB</h4>
+        <div class="skill-bar"><div class="skill-fill" data-w="75"></div></div>
+        <span class="skill-pct">75%</span>
+      </div>
+      <div class="skill-card reveal-up" style="--delay:.3s">
+        <div class="skill-icon"><i class="devicon-python-plain colored"></i></div>
+        <h4>Python</h4>
+        <div class="skill-bar"><div class="skill-fill" data-w="78"></div></div>
+        <span class="skill-pct">78%</span>
+      </div>
+      <div class="skill-card reveal-up" style="--delay:.5s">
+        <div class="skill-icon"><i class="devicon-cplusplus-plain colored"></i></div>
+        <h4>C++</h4>
+        <div class="skill-bar"><div class="skill-fill" data-w="70"></div></div>
+        <span class="skill-pct">70%</span>
+      </div>
+      <div class="skill-card reveal-up" style="--delay:.35s">
+        <div class="skill-icon"><i class="devicon-github-original"></i></div>
+        <h4>GitHub</h4>
+        <div class="skill-bar"><div class="skill-fill" data-w="92"></div></div>
+        <span class="skill-pct">92%</span>
+      </div>
+      
+      
+      <!-- Vercel with SVG logo -->
+      <div class="skill-card reveal-up" style="--delay:.4s">
+        <div class="skill-icon">
+          <svg role="img" viewBox="0 0 24 24" width="2.8rem" height="2.8rem" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 22.525H0l12-21.05 12 21.05z"/>
+          </svg>
+        </div>
+        <h4>Vercel</h4>
+        <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
+        <span class="skill-pct">85%</span>
+      </div>
+      
+      <div class="skill-card reveal-up" style="--delay:.45s">
+  <div class="skill-icon">
+    <svg viewBox="0 0 24 24" width="2.8rem" height="2.8rem" fill="#00C7B7">
+      <path d="M5.41 11.83L11.83 5.4l6.42 6.42-6.42 6.42z"/>
+      <path d="M11.83 0l3.57 3.57-3.57 3.57-3.57-3.57z"/>
+      <path d="M11.83 16.86l3.57 3.57-3.57 3.57-3.57-3.57z"/>
+      <path d="M0 11.83l3.57-3.57 3.57 3.57-3.57 3.57z"/>
+      <path d="M16.86 11.83l3.57-3.57L24 11.83l-3.57 3.57z"/>
+    </svg>
+  </div>
+  <h4>Netlify</h4>
+  <div class="skill-bar"><div class="skill-fill" data-w="82"></div></div>
+  <span class="skill-pct">82%</span>
+</div>
+      
+      <!-- LeetCode with SVG logo -->
+      <div class="skill-card reveal-up" style="--delay:.65s">
+        <div class="skill-icon">
+          <svg role="img" viewBox="0 0 24 24" width="2.8rem" height="2.8rem" fill="#FFA116" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H19.6a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/>
+          </svg>
+        </div>
+        <h4>LeetCode</h4>
+        <div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
+        <span class="skill-pct">80%</span>
+      </div>
+      
+      
+      <div class="skill-card reveal-up" style="--delay:.55s">
+        <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+        <h4>Responsive Design</h4>
+        <div class="skill-bar"><div class="skill-fill" data-w="92"></div></div>
+        <span class="skill-pct">92%</span>
+      </div>
+      
+      <div class="skill-card reveal-up" style="--delay:.6s">
+        <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+        <h4>Data Analysis</h4>
+        <div class="skill-bar"><div class="skill-fill" data-w="75"></div></div>
+        <span class="skill-pct">75%</span>
+      </div>
+      
+      <div class="skill-card reveal-up" style="--delay:.7s">
+        <div class="skill-icon"><i class="fas fa-file-excel"></i></div>
+        <h4>Excel</h4>
+        <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
+        <span class="skill-pct">85%</span>
+      </div>
+      
+      <div class="skill-card reveal-up" style="--delay:.75s">
+        <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
+        <h4>Tableau</h4>
+        <div class="skill-bar"><div class="skill-fill" data-w="70"></div></div>
+        <span class="skill-pct">70%</span>
+      </div>
+      
+      <div class="skill-card reveal-up" style="--delay:.8s">
+        <div class="skill-icon"><i class="fab fa-hackerrank"></i></div>
+        <h4>HackerRank</h4>
+        <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
+        <span class="skill-pct">85%</span>
+      </div>
+      
+      <div class="skill-card reveal-up" style="--delay:.85s">
+        <div class="skill-icon"><i class="fas fa-brain"></i></div>
+        <h4>Problem Solving</h4>
+        <div class="skill-bar"><div class="skill-fill" data-w="88"></div></div>
+        <span class="skill-pct">88%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section id="projects" class="projects section">
+    <div class="section-header reveal-up">
+      <p class="section-tag">What I've built</p>
+      <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal-up" style="--delay:0s">
+        <a href="https://finflow-expense-tracker.netlify.app/" target="_blank" rel="noopener" class="project-img-link">
+          <div class="project-img-wrap">
+            <img src="finflow.png" alt="Expense Tracker" />
+            <div class="project-overlay">
+              <span class="overlay-text">View Live ↗</span>
+            </div>
+          </div>
+        </a>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-number">01</span>
+            <div class="project-tags">
+              <span>html</span><span>css</span><span>JavaScript</span><span>MongoDB</span><span>Node.js</span>
+            </div>
+          </div>
+          <h3 class="project-title">Full Stack Expense Tracker</h3>
+          <p class="project-desc">A full-stack platform to track expenses, manage budgets, and visualize spending patterns with interactive charts and real-time updates.</p>
+          <a href="https://github.com" target="_blank" rel="noopener" class="project-link">
+            Explore Project
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card reveal-up" style="--delay:.1s">
+        <a href="https://github.com" target="_blank" rel="noopener" class="project-img-link">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="AI Chat Assistant" />
+            <div class="project-overlay">
+              <span class="overlay-text">View Live ↗</span>
+            </div>
+          </div>
+        </a>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-number">02</span>
+            <div class="project-tags">
+              <span>Python</span><span>React</span><span>OpenAI API</span>
+            </div>
+          </div>
+          <h3 class="project-title">AI Chat Assistant</h3>
+          <p class="project-desc">An intelligent conversational AI assistant with context memory, multi-model support, and a sleek streaming UI. Built with OpenAI API and LangChain.</p>
+          <a href="https://github.com" target="_blank" rel="noopener" class="project-link">
+            Explore Project
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card reveal-up" style="--delay:.2s">
+        <a href="https://github.com" target="_blank" rel="noopener" class="project-img-link">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80" alt="E-Commerce Store" />
+            <div class="project-overlay">
+              <span class="overlay-text">View Live ↗</span>
+            </div>
+          </div>
+        </a>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-number">03</span>
+            <div class="project-tags">
+              <span>Next.js</span><span>Stripe</span><span>MongoDB</span>
+            </div>
+          </div>
+          <h3 class="project-title">E-Commerce Store</h3>
+          <p class="project-desc">A blazing-fast e-commerce solution with server-side rendering, Stripe payments, inventory management, and an intuitive admin dashboard.</p>
+          <a href="https://github.com" target="_blank" rel="noopener" class="project-link">
+            Explore Project
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card reveal-up" style="--delay:.3s">
+        <a href="https://github.com" target="_blank" rel="noopener" class="project-img-link">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Analytics Dashboard" />
+            <div class="project-overlay">
+              <span class="overlay-text">View Live ↗</span>
+            </div>
+          </div>
+        </a>
+        <div class="project-body">
+          <div class="project-meta">
+            <span class="project-number">04</span>
+            <div class="project-tags">
+              <span>React</span><span>D3.js</span><span>Node.js</span>
+            </div>
+          </div>
+          <h3 class="project-title">Analytics Dashboard</h3>
+          <p class="project-desc">A real-time analytics platform with interactive D3 charts, custom KPI tracking, CSV data ingestion, and exportable reports for businesses.</p>
+          <a href="https://github.com" target="_blank" rel="noopener" class="project-link">
+            Explore Project
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATIONS SECTION ========== -->
+  <section id="certifications" class="certifications section">
+    <div class="section-header reveal-up">
+      <p class="section-tag">Achievements</p>
+      <h2 class="section-title">My <span class="accent">Certifications</span></h2>
+    </div>
+    <div class="certs-grid">
+
+      <div class="cert-card reveal-up" style="--delay:0s" onclick="openCertModal('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=900&q=80', 'Meta Front-End Developer')">
+        <div class="cert-img-wrap">
+          <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&q=80" alt="Meta Front-End Developer Certificate" />
+          <div class="cert-overlay"><span>🔍 Preview</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer">Meta</div>
+          <h4>Front-End Developer</h4>
+          <span class="cert-date">2024</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up" style="--delay:.1s" onclick="openCertModal('https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=900&q=80', 'AWS Cloud Practitioner')">
+        <div class="cert-img-wrap">
+          <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&q=80" alt="AWS Cloud Practitioner Certificate" />
+          <div class="cert-overlay"><span>🔍 Preview</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer">Amazon Web Services</div>
+          <h4>Cloud Practitioner</h4>
+          <span class="cert-date">2024</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up" style="--delay:.2s" onclick="openCertModal('https://images.unsplash.com/photo-1551650975-87deedd944c3?w=900&q=80', 'Google UX Design')">
+        <div class="cert-img-wrap">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&q=80" alt="Google UX Design Certificate" />
+          <div class="cert-overlay"><span>🔍 Preview</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer">Google</div>
+          <h4>UX Design Professional</h4>
+          <span class="cert-date">2023</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up" style="--delay:.3s" onclick="openCertModal('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=900&q=80', 'Deep Learning Specialization')">
+        <div class="cert-img-wrap">
+          <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&q=80" alt="Deep Learning Specialization Certificate" />
+          <div class="cert-overlay"><span>🔍 Preview</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer">DeepLearning.AI</div>
+          <h4>Deep Learning Specialization</h4>
+          <span class="cert-date">2023</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up" style="--delay:.4s" onclick="openCertModal('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900&q=80', 'Full Stack Web Development')">
+        <div class="cert-img-wrap">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&q=80" alt="Full Stack Web Development Certificate" />
+          <div class="cert-overlay"><span>🔍 Preview</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer">freeCodeCamp</div>
+          <h4>Full Stack Web Development</h4>
+          <span class="cert-date">2022</span>
+        </div>
+      </div>
+
+      <div class="cert-card reveal-up" style="--delay:.5s" onclick="openCertModal('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80', 'React &amp; Redux Mastery')">
+        <div class="cert-img-wrap">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=80" alt="React and Redux Certificate" />
+          <div class="cert-overlay"><span>🔍 Preview</span></div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-issuer">Udemy</div>
+          <h4>React &amp; Redux Mastery</h4>
+          <span class="cert-date">2022</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact" class="contact section">
+    <div class="section-header reveal-up">
+      <p class="section-tag">Let's work together</p>
+      <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
+    </div>
+    <div class="contact-grid">
+
+      <div class="contact-info reveal-left">
+        <p class="contact-intro">
+          I'm always open to discussing new projects, creative ideas, or opportunities to be part of something great.
+          Drop me a message and let's make something amazing together.
+        </p>
+
+        <div class="social-cards">
+          <a href="mailto:anuj@example.com" class="social-card">
+            <div class="social-icon email-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="social-info">
+              <span class="social-label">Email</span>
+              <span class="social-value">anujshukla2431527@gmail.com</span>
+            </div>
+            <svg class="social-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="https://github.com" target="_blank" rel="noopener" class="social-card">
+            <div class="social-icon github-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+              </svg>
+            </div>
+            <div class="social-info">
+              <span class="social-label">GitHub</span>
+              <span class="social-value">github.com/anuj</span>
+            </div>
+            <svg class="social-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-card">
+            <div class="social-icon linkedin-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </div>
+            <div class="social-info">
+              <span class="social-label">LinkedIn</span>
+              <span class="social-value">linkedin.com/in/anuj</span>
+            </div>
+            <svg class="social-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+
+          <a href="https://anuj.dev" target="_blank" rel="noopener" class="social-card">
+            <div class="social-icon web-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <div class="social-info">
+              <span class="social-label">Website</span>
+              <span class="social-value">anuj.dev</span>
+            </div>
+            <svg class="social-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap reveal-right">
+        <div class="glass-form">
+          <h3>Send a Message</h3>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="John Doe" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="john@example.com" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Tell me about your project..."></textarea>
+          </div>
+          <button class="btn btn-primary full-width" id="sendBtn" onclick="handleFormSubmit()">
+            <span id="sendBtnText">Send Message</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+          <p id="form-success" class="form-success" style="display:none">✅ Message sent! I'll get back to you soon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="#home" class="footer-logo">Anuj<span class="accent">.</span></a>
+      <p class="footer-copy">© 2026 Anuj</p>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== BACK TO TOP BUTTON ========== -->
+  <button id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- ========== DOCUMENT MODAL (Resume / CV) ========== -->
+  <div id="docModal" class="modal-overlay" onclick="closeDocModal(event)">
+    <div class="modal-box glass-modal" id="docModalBox">
+      <button class="modal-close" onclick="closeDocModalBtn()">✕</button>
+      <div class="modal-icon">📄</div>
+      <h3 id="docModalTitle">Resume</h3>
+      <p id="docModalSub">What would you like to do?</p>
+      <div class="modal-actions">
+        <a id="docViewBtn" href="#" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          View Now
+        </a>
+        <a id="docDownloadBtn" href="#" download class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== CERTIFICATE MODAL ========== -->
+  <div id="certModal" class="modal-overlay cert-modal-overlay" onclick="closeCertModal(event)">
+    <div class="modal-box cert-modal-box">
+      <button class="modal-close" onclick="closeCertModalBtn()">✕</button>
+      <h3 id="certModalTitle" class="cert-modal-title"></h3>
+      <img id="certModalImg" src="" alt="Certificate preview" class="cert-modal-img" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
